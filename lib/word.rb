@@ -1,31 +1,37 @@
 class Word
-  @@dictionary = {{
-    'cat'=> 'Meow',
-    'dog' => 'Woof',
-    'pig' => 'oink',
-    'horse' => 'nay',
-    'sheep' => 'baah'
-  }}
-  @@input_word_bank = []
+  @@dictionary = []
   @@id_index = 0
 
-  attr_reader :word, :definition
-  attr_accessor :input_word, :input_definition
+  attr_accessor :word, :definition
+  attr_reader :id
 
   def initialize(attributes)
-    @input_word = attributes.fetch(:input_word)
-    @input_definition = attributes.fetch(:input_definition)
+    @word = attributes.fetch(:word)
+    @definition = [attributes.fetch(:definition)]
     @id = @@id_index
-
   end
 
-  def self.words
-    @@word_bank
+  def self.all
+    @@dictionary
   end
 
-  def self.input_word
-    @@input_word
+  def save_word
+    @@dictionary.push(self)
+    @@id_index +=1
   end
 
+  def self.clear
+    @@dictionary = []
+    @@id_index = 0
+  end
+
+  def self.find_word(id)
+    words = Words.all
+    words.each do |contact|
+      if contact.id == id
+        return words
+      end
+    end
+  end
 
 end
