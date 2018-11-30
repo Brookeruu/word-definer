@@ -14,11 +14,19 @@ describe(Word) do
     end
   end
 
-  describe('.initialize') do
+  describe('#initialize') do
     it('create a new word') do
       new_word = Word.new({:word=> 'dog', :definition=> 'woof'})
       expect(new_word.word).to(eq('dog'))
       expect(new_word.definition).to(eq(['woof']))
+    end
+  end
+
+  describe('#save_word') do
+    it('save new word to @@dictionary array') do
+      new_word = Word.new(:word=> 'cat', :definition=> 'meow')
+      new_word.save_word
+      expect(Word.all).to(eq([new_word]))
     end
   end
 
