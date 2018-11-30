@@ -35,7 +35,9 @@ class Word
   end
 
 
-  def add_definition
+  def add_definition(id)
+    new_definition = Word.find_word(id)
+    
   end
 
 end
