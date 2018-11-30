@@ -3,9 +3,12 @@
 
 <h3>Words</h3>
 
-<ul>
+<!-- <ul>
+  <% @dictionary.each do |word| %>
+  <li> <a href="output/<%= word.id %>"><%= word.word %></a> </li>
+  <% end %>
 
-</ul>
+</ul> -->
 
 <form class="form-group" action="/output" method="post">
   <label for="">Enter a word to define:</label>

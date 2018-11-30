@@ -16,7 +16,7 @@ class Word
   end
 
   def show_def
-    @definition    
+    @definition
   end
 
   def save_word
