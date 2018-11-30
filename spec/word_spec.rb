@@ -24,9 +24,17 @@ describe(Word) do
 
   describe('#save_word') do
     it('save new word to @@dictionary array') do
-      new_word = Word.new(:word=> 'cat', :definition=> 'meow')
+      new_word = Word.new({:word=> 'cat', :definition=> 'meow'})
       new_word.save_word
       expect(Word.all).to(eq([new_word]))
+    end
+  end
+  
+  describe('.find_word') do
+    it('find word by its id number') do
+      new_word = Word.new({:word=> 'horse', :definition=> 'nay', :id=> 1})
+      new_word.save_word
+      expect(Word.find_word(1)).to(eq(new_word))
     end
   end
 

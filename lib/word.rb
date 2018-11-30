@@ -1,6 +1,6 @@
 class Word
   @@dictionary = []
-  @@id_index = 0
+  @@id_index = 1
 
   attr_accessor :word, :definition
   attr_reader :id
@@ -22,16 +22,20 @@ class Word
 
   def self.clear
     @@dictionary = []
-    @@id_index = 0
+    @@id_index = 1
   end
 
   def self.find_word(id)
-    words = Words.all
-    words.each do |contact|
-      if contact.id == id
-        return words
+    words = Word.all
+    words.each do |word|
+      if word.id == id
+        return word
       end
     end
+  end
+
+
+  def add_definition
   end
 
 end
