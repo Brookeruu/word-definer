@@ -15,6 +15,10 @@ class Word
     @@dictionary
   end
 
+  def show_def
+    @definition    
+  end
+
   def save_word
     @@dictionary.push(self)
     @@id_index +=1
@@ -34,6 +38,9 @@ class Word
     end
   end
 
+  def add_def(definition)
+    @definition.push(definition)
+  end
 
 
 end

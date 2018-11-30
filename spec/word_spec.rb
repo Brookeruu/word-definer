@@ -41,13 +41,26 @@ describe(Word) do
     end
   end
 
-  describe('.add_definition') do
-    it('use find_word method to find word before adding additional definition') do
+  # describe('.add_definition') do
+  #   it('use find_word method to find word before adding additional definition') do
+  #     new_word = Word.new({:word=> 'horse', :definition=> 'nay', :id=> 1})
+  #     new_word.save_word
+  #     expect(Word.find_word(1)).to(eq(new_word))
+  #   end
+  # end
+
+  describe('#add_def') do
+    it('add additional definition to word') do
       new_word = Word.new({:word=> 'horse', :definition=> 'nay', :id=> 1})
       new_word.save_word
-      expect(Word.find_word(1)).to(eq(new_word))
-
+      new_word.add_def('Hay')
+      expect(new_word.show_def).to(eq(['nay', 'Hay']))
     end
   end
+
+
+
+
+
 
 end
