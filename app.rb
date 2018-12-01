@@ -10,19 +10,20 @@ get('/') do
 end
 
 post('/output') do
-  @word = params.fetch("word")
-  word = Word.new({:word=> "word", :definition=> nil})
-  word.save_word
-  @id = word.id
+  @new_word = params.fetch("word")
+  new_word = Word.new({:word=> @new_word, :definition=> nil})
+  new_word.save_word
+  @id = new_word.id
   @dictionary = Word.all
   erb(:input)
 end
 
-# get('/output/:id') do
-#   @id = params[:id].to_i
-#   word = Word.find_word(@id)
-#   @word = word.words
-#   @definition = Word.add_def
-#   @dictionary = Word.all
-#   erb(:output)
-# end
+get('/output/:id') do
+  @id = params[:id].to_i
+  new_word = Word.find_word(@id)
+  @new_word = new_word.word
+  new_definition = Word
+  # @definition = Word.add_def
+  @dictionary = Word.all
+  erb(:output)
+end

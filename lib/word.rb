@@ -39,7 +39,9 @@ class Word
   end
 
   def add_def(definition)
+    new_def = (definition)
     @definition.push(definition)
+    new_def
   end
 
 
