@@ -2,24 +2,24 @@
 
 <% @dictionary.each do |word| %>
   <% if word.id == @id %>
-  <h1><%= word.word %></h1>
+    <h1><%= word.word %></h1>
   <% end %>
-  <% end %>
+<% end %>
 
-  <ul>
-    <% @dictionary.each do |word| %>
+<ul>
+  <% @dictionary.each do |word| %>
     <% if word.id == @id %>
-    <% %>
-    <li><%= word.definition%></li>
-  </ul>
+      <% word.definition.each do |definition| %>
+        <li><%= definition %></li>
+      <% end %>
+    <% end %>
   <% end %>
-  <% end %>
-  <ul>
+</ul>
 
-    <form class="" action="/add_defs/<%= @id %>">
-      <label for="definition">What do you think this word means?</label><br>
-      <input type="text" name="definition" pattern="[a-z]{1}">
-      <button type="submit" class="btn btn-warning" name="button">Add definition</button>
-    </form>
+<form class="" action="/add_defs/<%= @id %>">
+  <label for="definition">Add another definition?</label><br>
+  <input type="text" name="definition">
+  <button type="submit" class="btn btn-warning" name="button">Add definition</button>
+</form>
 
 <a href="/">Return to list of words</a>

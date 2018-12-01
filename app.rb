@@ -12,7 +12,8 @@ end
 
 post('/output') do
   @new_word = params["word"]
-  new_word = Word.new({:word=> @new_word, :definition=> nil})
+  @definition = params["definition"]
+  new_word = Word.new({:word=> @new_word, :definition=> @definition})
   new_word.save_word
   @id = new_word.id
   @dictionary = Word.all

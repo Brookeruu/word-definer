@@ -14,7 +14,10 @@
 <form class="form-group" action="/output" method="post">
 
   <label for="word">Enter a word to define:</label>
-  <input class="form-control" type="text" name="word">
+  <input class="form-control" type="text" name="word" required>
+
+  <label for="word">Enter a definition:</label>
+  <input class="form-control" type="text" name="definition" required>
 
 <button type="submit" class="btn btn-info" name="button">Add word</button>
 
