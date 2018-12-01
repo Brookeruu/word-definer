@@ -18,7 +18,7 @@
 
     <form class="" action="/add_defs/<%= @id %>">
       <label for="definition">What do you think this word means?</label><br>
-      <input type="text" name="definition" value="">
+      <input type="text" name="definition" pattern="[a-z]{1}">
       <button type="submit" class="btn btn-warning" name="button">Add definition</button>
     </form>
 
