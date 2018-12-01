@@ -1,5 +1,6 @@
 require('sinatra')
 require('sinatra/reloader')
+require('pry')
 also_reload('.lib/**/*.rb')
 require('./lib/word')
 
@@ -10,7 +11,7 @@ get('/') do
 end
 
 post('/output') do
-  @new_word = params.fetch("word")
+  @new_word = params["word"]
   new_word = Word.new({:word=> @new_word, :definition=> nil})
   new_word.save_word
   @id = new_word.id
@@ -24,6 +25,18 @@ get('/output/:id') do
   @new_word = new_word.word
   new_definition = Word
   # @definition = Word.add_def
+  @dictionary = Word.all
+  erb(:output)
+end
+
+get('/add_defs/:id') do
+  @id = params[:id].to_i
+  new_word = Word.find_word(@id)
+  @new_word = new_word.word
+
+  # @new_word = new_word.word
+  new_definition = params["definition"]
+  @definition = new_word.add_def(new_definition)
   @dictionary = Word.all
   erb(:output)
 end
