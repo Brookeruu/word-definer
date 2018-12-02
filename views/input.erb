@@ -1,11 +1,11 @@
 <h2>Word Definer</h2>
 
 
-<h3>Words</h3>
+<h3 class="newWords">Words</h3>
 
 <ul>
   <% @dictionary.each do |item| %>
-  <li> <a href="/output/<%= item.id %>">
+  <li class="newWords"> <a href="/output/<%= item.id %>">
   <%= item.word %></a> </li>
   <% end %>
 
@@ -16,9 +16,9 @@
   <label for="word">Enter a word to define:</label>
   <input class="form-control" type="text" name="word" required>
 
-  <label for="word">Enter a definition:</label>
+  <label for="word">What do you think this word means:</label>
   <input class="form-control" type="text" name="definition" required>
 
-<button type="submit" class="btn btn-info" name="button">Add word</button>
+<button type="submit" class="btn btn-success" name="button">Add word</button>
 
 </form>

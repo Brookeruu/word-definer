@@ -1,23 +1,27 @@
-<h2>Output</h2>
+<h2>Definitions:</h2>
 
-<% @dictionary.each do |word| %>
-  <% if word.id == @id %>
-    <h1><%= word.word %></h1>
-  <% end %>
-<% end %>
-
-<ul>
+<div>
   <% @dictionary.each do |word| %>
     <% if word.id == @id %>
-      <% word.definition.each do |definition| %>
-        <li><%= definition %></li>
-      <% end %>
+      <h1 class="newWordsOutput"><%= word.word %></h1>
     <% end %>
   <% end %>
-</ul>
+</div>
 
-<form class="" action="/add_defs/<%= @id %>">
-  <label for="definition">Add another definition?</label><br>
+<div >
+  <ul>
+    <% @dictionary.each do |word| %>
+      <% if word.id == @id %>
+        <% word.definition.each do |definition| %>
+          <li class="newDefs"><%= definition %></li>
+        <% end %>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+
+<form id="formDef" class="" action="/add_defs/<%= @id %>">
+  <label class="labels" for="definition">Add another definition?</label><br>
   <input type="text" name="definition">
   <button type="submit" class="btn btn-warning" name="button">Add definition</button>
 </form>

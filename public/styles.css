@@ -1,0 +1,43 @@
+
+h2 {
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 50px;
+  font-weight: lighter;
+  color: red;
+}
+
+.newWords {
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 30px;
+  font-weight: bold;
+  color: #337ab7;
+}
+
+.newWordsOutput {
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 50px;
+  font-weight: normal;
+  color: #337ab7;
+}
+
+h3 {
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 60px;
+  font-weight: lighter;
+  text-decoration: underline;
+}
+
+.newDefs {
+  font-family: 'Architects Daughter';
+  font-size: 25px;
+  color: green;
+}
+
+.labels {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+form{
+  margin-top: 30px;
+}
