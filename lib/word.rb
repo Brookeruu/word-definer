@@ -1,7 +1,5 @@
 class Word
-  @@dictionary = [
-    # {'dog', ['woof']}
-  ]
+  @@dictionary = []
   @@id_index = 1
 
   attr_accessor :word, :definition
