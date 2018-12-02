@@ -24,7 +24,7 @@ _This site was created as the Ruby Week 2 Independent Project. The purpose of th
 
 Link to github: https://github.com/Brookeruu/word-definer
 
-Link to heroku: https://afternoon-garden-83962.herokuapp.com/
+Link to heroku: https://cryptic-dawn-41204.herokuapp.com/
 
 ##### Setup/Installation Requirements
 * Clone this repository
