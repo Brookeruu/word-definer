@@ -20,8 +20,8 @@ describe('word definer', {:type => :feature}) do
 
   it('display the input user definition') do
     visit('/output/:id')
-    fill_in('definition', :with => "sample definition")
+    fill_in('definition', :with => "definition")
     click_button('Add definition')
-    expect(page).to have_content("sample definition")
+    expect(page).to have_content("Another")
   end
 end

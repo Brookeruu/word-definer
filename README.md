@@ -29,8 +29,6 @@ Link to github: https://github.com/Brookeruu/word-definer
 * Open in browser of your choice
 
 ##### Known Bugs
- * Definition output displays as an array
- * index[0] of definition array is 'nil'
  * No restriction to what letters/numbers/characters can be input
 
 ##### Technologies Used
