@@ -30,7 +30,7 @@ get('/output/:id') do
   erb(:output)
 end
 
-get('/add_defs/:id') do
+post('/add_defs/:id') do
   @id = params[:id].to_i
   new_word = Word.find_word(@id)
   @new_word = new_word.word
