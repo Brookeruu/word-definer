@@ -49,10 +49,4 @@ describe(Word) do
       expect(new_word.show_def).to(eq(['nay', 'Hay']))
     end
   end
-
-
-
-
-
-
 end

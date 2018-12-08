@@ -44,5 +44,4 @@ class Word
     return new_def
   end
 
-
 end

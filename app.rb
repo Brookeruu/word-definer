@@ -25,7 +25,6 @@ get('/output/:id') do
   new_word = Word.find_word(@id)
   @new_word = new_word.word
   new_definition = Word
-  # @definition = Word.add_def
   @dictionary = Word.all
   erb(:output)
 end
@@ -34,8 +33,6 @@ post('/add_defs/:id') do
   @id = params[:id].to_i
   new_word = Word.find_word(@id)
   @new_word = new_word.word
-
-  # @new_word = new_word.word
   new_definition = params["definition"]
   @definition = new_word.add_def(new_definition)
   @dictionary = Word.all
