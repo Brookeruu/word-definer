@@ -23,9 +23,20 @@ describe('word definer', {:type => :feature}) do
       test_word.save_word
     visit('/')
     click_link('example')
-    fill_in('definition', :with => "sampler")
+    # fill_in('definition', :with => "sampler")
     click_button('Add definition')
     expect(page).to have_content("example definition")
-    expect(page).to have_content("sampler")
+    # expect(page).to have_content("sampler")
+  end
+
+  it('display additional input user definitions') do
+    test_word = Word.new({:word => "example2", :definition => "example2 definition"})
+      test_word.save_word
+    visit('/')
+    click_link('example2')
+    fill_in('definition', :with => "additional definition")
+    click_button('Add definition')
+    expect(page).to have_content("example2 definition")
+    expect(page).to have_content("additional definition")
   end
 end
