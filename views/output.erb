@@ -20,9 +20,9 @@
   </ul>
 </div>
 
-<form id="formDef" class="" action="/add_defs/<%= @id %>">
+<form id="formDef" class="" action="/add_defs/<%= @id %>" method="post">
   <label class="labels" for="definition">Add another definition?</label><br>
-  <input type="text" name="definition">
+  <input type="text" name="definition" required>
   <button type="submit" class="btn btn-warning" name="button">Add definition</button>
 </form>
 
